@@ -1,4 +1,6 @@
+"use client"
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const page = () => {
@@ -10,7 +12,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce" className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce" className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -23,7 +25,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -36,7 +38,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -49,7 +51,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -62,7 +64,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -75,7 +77,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -88,7 +90,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -101,7 +103,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>

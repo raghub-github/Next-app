@@ -2,10 +2,8 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {/* <h1 className="mx-2 bg-red-800">Welcome to Next app</h1> */}
+    <main className="flex  flex-col items-center justify-between p-24">
       <Image src={"/mainimage.png"} width={"4000"} height={"2000"} alt='logo' ></Image>
-
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">

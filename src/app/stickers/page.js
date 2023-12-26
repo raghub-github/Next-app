@@ -1,5 +1,5 @@
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
 
 const page = () => {
   return (
@@ -10,7 +10,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce" className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce" className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/91EQs+Vm5YL._AC_SY300_SX300_.jpg" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -23,7 +23,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/91EQs+Vm5YL._AC_SY300_SX300_.jpg" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -36,7 +36,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/91EQs+Vm5YL._AC_SY300_SX300_.jpg" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -49,7 +49,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/91EQs+Vm5YL._AC_SY300_SX300_.jpg" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -62,7 +62,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/91EQs+Vm5YL._AC_SY300_SX300_.jpg" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -75,7 +75,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/91EQs+Vm5YL._AC_SY300_SX300_.jpg" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -88,7 +88,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/91EQs+Vm5YL._AC_SY300_SX300_.jpg" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
@@ -101,7 +101,7 @@ const page = () => {
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
               <Link href={"./product/ware-the-code"}>
                 <div className="block relative rounded overflow-hidden">
-                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
+                  <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/91EQs+Vm5YL._AC_SY300_SX300_.jpg" />
                 </div>
                 <div className="mt-4 text-center">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirts</h3>
