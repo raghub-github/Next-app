@@ -8,7 +8,7 @@ const page = () => {
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce" className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
                 </div>
@@ -21,7 +21,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
                 </div>
@@ -34,7 +34,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
                 </div>
@@ -47,7 +47,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
                 </div>
@@ -60,7 +60,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
                 </div>
@@ -73,7 +73,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
                 </div>
@@ -86,7 +86,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
                 </div>
@@ -99,7 +99,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="https://m.media-amazon.com/images/I/71beHOHZKfL._AC_SX569_.jpg" />
                 </div>

@@ -8,9 +8,9 @@ const page = () => {
     <div>
       <section className="text-gray-600 m-3 body-font">
         <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -m-4">
+          <div className="flex flex-wrap -m-4 ">
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce" className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
@@ -23,7 +23,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
@@ -36,7 +36,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
@@ -49,7 +49,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
@@ -62,7 +62,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
@@ -75,7 +75,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
@@ -88,7 +88,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
@@ -101,7 +101,7 @@ const page = () => {
               </Link>
             </div>
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
-              <Link href={"./product/ware-the-code"}>
+              <Link href={"./product"}>
                 <div className="block relative rounded overflow-hidden">
                   <img alt="ecommerce"  className="m-auto md:h-[40vh] h-[35vh] block" src="/tshirt.png" />
                 </div>
