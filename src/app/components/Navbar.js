@@ -4,8 +4,9 @@ import Link from 'next/link'
 import Image from 'next/image';
 import { FiShoppingCart } from "react-icons/fi";
 import { IoIosCloseCircle } from "react-icons/io";
-import { FaPlus, FaMinus, FaStackOverflow } from "react-icons/fa";
+import { FaPlus, FaMinus } from "react-icons/fa";
 import { IoBagHandle } from "react-icons/io5";
+import { MdAccountCircle } from "react-icons/md";
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart, removeFormCart, increment, decrement } from '../redux/slice';
 
@@ -24,9 +25,10 @@ const Navbar = () => {
             ref.current.classList.remove("translate-x-full")
             ref.current.classList.remove("hidden")
             ref.current.classList.add("translate-x-0")
-        } else if (!ref.current.classList.contains("translate-x-full")) {
+        } else if (!ref.current.classList.contains("translate-x-full") || !ref.current.classList.contains("hidden")) {
             ref.current.classList.remove("translate-x-0")
             ref.current.classList.add("translate-x-full")
+            ref.current.classList.add("hidden")
         }
     }
     const ref = useRef();
@@ -54,14 +56,17 @@ const Navbar = () => {
                 </ul>
                 <div className='mt-6 justify-center text-center text-xl'>Sub Total ₹ {subTotal}</div>
                 <div className="flex">
-                    <button className="flex mt-10 mx-auto text-white bg-green-600 border-0 py-2 px-3 focus:outline-none hover:bg-green-600 rounded text-lg font-semiboldbold"><IoBagHandle className='m-1' />Checkout</button>
-                    <button onClick={() => { dispatch(clearCart()) }} className="flex mt-10 mx-auto text-white bg-red-500 border-0 py-2 ml-4 px-3 focus:outline-none hover:bg-rd-500 rounded text-lg font-semiboldbold">Clear Cart</button>
+                    <Link href={"/checkout"}><button onClick={toggleCart} className="flex mt-10 mx-auto text-white bg-green-600 border-0 py-2 px-3 focus:outline-none hover:bg-green-600 rounded text-lg font-semiboldbold"><IoBagHandle className='m-1' />Checkout</button></Link>
+                    <button onClick={() => {
+                        toggleCart();
+                        dispatch(clearCart());
+                    }} className="flex mt-10 mx-auto text-white bg-red-500 border-0 py-2 ml-4 px-3 focus:outline-none hover:bg-rd-500 rounded text-lg font-semiboldbold">Clear Cart</button>
                 </div>
             </>
         );
     };
     return (
-        <div className='flex flex-col md:flex-row md:justify-start justify-center items-center  my-0 shadow-md'>
+        <div className='flex flex-col md:flex-row md:justify-start justify-center items-center  my-0 shadow-md sticky top-0 z-10 bg-white'>
             <Link href={"./"}>
                 <div className="logo mx-4">
                     <Image src={"/logo.png"} width={"80"} height={"10"} alt='logo' ></Image>
@@ -75,11 +80,12 @@ const Navbar = () => {
                     <li><Link href="./mugs">Mugs</Link></li>
                 </ul>
             </div>
-            <div onClick={toggleCart} className="cursor-pointer cart absolute right-0 mx-7 justify-center items-center">
-                <FiShoppingCart className='text-4xl md:text-4xl' />
+            <div className="flex cursor-pointer cart absolute right-0 mx-7 justify-center items-center">
+                <Link href={"/login"}><MdAccountCircle className='text-4xl md:text-4xl mx-3' /></Link>
+                <FiShoppingCart onClick={toggleCart} className='text-4xl md:text-4xl' />
             </div>
 
-            <div ref={ref} className="h-full w-100 sideCart absolute top-0 z-10 right-0 bg-pink-50 px-10 py-20 transform transition-transform hidden translate-x-full">
+            <div ref={ref} className="h-[100vh] w-100 sideCart absolute top-0 z-10 right-0 bg-green-50 border px-10 py-20 transform transition-transform hidden translate-x-full">
                 <h2 className='text-center font-bold text-xl'>Cart items</h2>
                 <span onClick={toggleCart} className="absolute top-7 right-5 cursor-pointer text-4xl text-red-500"><IoIosCloseCircle /></span>
                 {isClient ? renderCartContent() : null}

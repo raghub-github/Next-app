@@ -4,7 +4,7 @@ import React from 'react';
 const page = () => {
   return (
     <div>
-      <section className="text-gray-600 m-3 body-font">
+      <section className="text-gray-600 mr-5 ml-5 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
             <div className="lg:w-1/4 cursor-pointer md:w-1/2 p-4 w-full shadow-lg">
