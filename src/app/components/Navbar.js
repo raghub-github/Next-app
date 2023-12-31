@@ -8,6 +8,7 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 import { IoBagHandle } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
 import { useDispatch, useSelector } from 'react-redux';
+import { MdDelete } from "react-icons/md";
 import { clearCart, removeFormCart, increment, decrement } from '../redux/slice';
 
 const Navbar = () => {
@@ -43,12 +44,18 @@ const Navbar = () => {
                 <ul className='list-decimal font-semibold'>
                     {userCart.carts.map((k) => (
                         <li key={k.id}>
-                            <div className="item flex my-5">
+                            <div className="item flex my-4">
                                 <div className='w-2/3 font-semibold mx-3'>{k.name}</div>
                                 <div className='flex font-semibold items-center justify-center w-1/3'>
                                     <FaMinus onClick={() => { dispatch(decrement(k.id)) }} className='cursor-pointer' />
                                     <span className="mx-3">{k.qty}</span>
                                     <FaPlus onClick={() => { dispatch(increment(k.id)) }} className='cursor-pointer' />
+                                </div>
+                                <div className='w-1/6 flex font-semibold items-center justify-center'>
+                                    <span className="ml-8 text-green-700">₹{k.price * k.qty}</span> 
+                                </div>
+                                <div className='w-1/5 flex font-semibold items-center justify-center'>
+                                    <MdDelete onClick={() => { dispatch(removeFormCart({ id: k.id, qty: k.qty })) }} className="ml-8 text-red-700" />
                                 </div>
                             </div>
                         </li>

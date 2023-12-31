@@ -38,7 +38,7 @@ const page = () => {
                   <FaPlus onClick={() => { dispatch(increment(k.id)) }} className='text-green-700 cursor-pointer' />
                 </div>
                 <div className='w-1/6 flex font-semibold items-center justify-center'>
-                  <MdDelete className="ml-8 text-red-700"/>
+                  <MdDelete onClick={() => { dispatch(removeFormCart({ id: k.id, qty: k.qty })) }} className="ml-8 text-red-700" />
                 </div>
               </div>
             </li>

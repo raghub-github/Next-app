@@ -5,7 +5,7 @@ const productSchema = new mongoose.Schema({
     slug: { type: String, required: true, unique: true},
     price: { type: Number, required: true },
     color: { type: Array, required: true },
-    size: { type: Arrsy, required: true },
+    size: { type: Array, required: true },
     image: { type: Array, required: true },
     title: { type: String, required: true },
     category: { type: String, required: true },
@@ -14,5 +14,8 @@ const productSchema = new mongoose.Schema({
     description: { type: String, required: true },
 }, { timestamps: true });
 
-const products = new mongoose.model('Product', productSchema);
-module.exports = products;
+mongoose.models = {};
+// const Products = new 
+export default mongoose.model('Product', productSchema);
+// const Products = new mongoose.model('Product', productSchema);
+// export default Products;
