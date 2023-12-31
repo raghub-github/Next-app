@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image';
 import { FiShoppingCart } from "react-icons/fi";
 import { IoIosCloseCircle } from "react-icons/io";
-import { FaPlus, FaMinus } from "react-icons/fa";
+import { FaPlus, FaMinus, FaShoppingCart } from "react-icons/fa";
 import { IoBagHandle } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,6 +16,7 @@ const Navbar = () => {
     const subTotal = useSelector((data) => data.reducer.subTotal);
     const dispatch = useDispatch();
     const [isClient, setIsClient] = useState(false);
+    const [itemCount, setItemCount] = useState(0);
 
     useEffect(() => {
         setIsClient(true);
@@ -52,7 +53,7 @@ const Navbar = () => {
                                     <FaPlus onClick={() => { dispatch(increment(k.id)) }} className='cursor-pointer' />
                                 </div>
                                 <div className='w-1/6 flex font-semibold items-center justify-center'>
-                                    <span className="ml-8 text-green-700">₹{k.price * k.qty}</span> 
+                                    <span className="ml-8 text-green-700">₹{k.price * k.qty}</span>
                                 </div>
                                 <div className='w-1/5 flex font-semibold items-center justify-center'>
                                     <MdDelete onClick={() => { dispatch(removeFormCart({ id: k.id, qty: k.qty })) }} className="ml-8 text-red-700" />
@@ -88,8 +89,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="flex cursor-pointer cart absolute right-0 mx-7 justify-center items-center">
-                <Link href={"/login"}><MdAccountCircle className='text-4xl md:text-4xl mx-3' /></Link>
-                <FiShoppingCart onClick={toggleCart} className='text-4xl md:text-4xl' />
+                <Link href={"/login"}><MdAccountCircle className='text-4xl md:text-4xl mt-3   mx-3 text-pink-700' /></Link>
+                <div class="flex justify-center items-center">
+                    <div class="relative py-2">
+                        <div class="t-0 absolute left-5">
+                            <p class="flex h-2 w-2 items-center justify-center rounded-full bg-pink-500 p-3 text-xs text-white">{itemCount}</p>
+                        </div>
+                        <FaShoppingCart onClick={toggleCart} className='text-4xl mt-3 file: h-8 w-8 text-blue-900 md:text-4xl' />
+                    </div>
+                </div>
             </div>
 
             <div ref={ref} className="h-[100vh] w-100 sideCart absolute top-0 z-10 right-0 bg-green-50 border px-10 py-20 transform transition-transform hidden translate-x-full">
