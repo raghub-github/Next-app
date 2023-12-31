@@ -2,7 +2,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image';
-import { FiShoppingCart } from "react-icons/fi";
 import { IoIosCloseCircle } from "react-icons/io";
 import { FaPlus, FaMinus, FaShoppingCart } from "react-icons/fa";
 import { IoBagHandle } from "react-icons/io5";
@@ -20,7 +19,8 @@ const Navbar = () => {
 
     useEffect(() => {
         setIsClient(true);
-    }, []);
+        setItemCount(userCart.carts.reduce((total, item) => total + item.qty, 0));
+    }, [userCart.carts]);
 
     const toggleCart = () => {
         if (ref.current.classList.contains("translate-x-full") || ref.current.classList.contains("hidden")) {
@@ -33,6 +33,7 @@ const Navbar = () => {
             ref.current.classList.add("hidden")
         }
     }
+
     const ref = useRef();
 
     const renderCartContent = () => {
@@ -89,11 +90,11 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="flex cursor-pointer cart absolute right-0 mx-7 justify-center items-center">
-                <Link href={"/login"}><MdAccountCircle className='text-4xl md:text-4xl mt-3   mx-3 text-pink-700' /></Link>
-                <div class="flex justify-center items-center">
-                    <div class="relative py-2">
-                        <div class="t-0 absolute left-5">
-                            <p class="flex h-2 w-2 items-center justify-center rounded-full bg-pink-500 p-3 text-xs text-white">{itemCount}</p>
+                <Link href={"/login"}><MdAccountCircle className='text-4xl md:text-4xl mt-3   mx-3 text-pink-600' /></Link>
+                <div className="flex justify-center items-center">
+                    <div className="relative py-2">
+                        <div className="t-0 absolute left-5">
+                            <p className="flex h-2 w-2 items-center justify-center rounded-full bg-pink-500 p-3 text-xs text-white">{itemCount}</p>
                         </div>
                         <FaShoppingCart onClick={toggleCart} className='text-4xl mt-3 file: h-8 w-8 text-blue-900 md:text-4xl' />
                     </div>
