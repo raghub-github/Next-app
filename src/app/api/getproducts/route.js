@@ -1,20 +1,69 @@
-import Products from "@/app/models/product_model";
-import connectDB from "@/app/middleware/mongoose";
+import Product from "@/app/api/models/product_model";
+import db from "../db/mongoose"
 import { NextResponse } from "next/server";
 
-
-export const handler = async (req, res) => {
+export async function GET(req, res) {
+  await db();
+  try {
     if (req.method === "GET") {
-        console.log(process.env.MONGO_URI);
-        let product = await Products.find();
-        return NextResponse.json('Hello from Next.js!')
+      const products = await Product.find();
+      return NextResponse.json(products);
     } else {
-        return NextResponse.json("error", { status: 400 })
-    }
+      return NextResponse.json({ error: "Invalid request method" });
+    };
+  } catch (error) {
+    console.error("Error in API handler:", error);
+    return NextResponse.json({ error: "Internal Server Error" });
+  };
+};
 
-}
-// export async function GET(req, res) {
-//     let product = await Products.find();
-//     return new Response('Hello from Next.js!')
-// }
-export default connectDB(handler);
+export async function POST(req, res) {
+  await db();
+  try {
+    const payload = await req.json();
+    if (req.method === "POST") {
+      const productPromises = payload.map(async (item) => {
+        let p = new Product({
+          name: item.name,
+          slug: item.slug,
+          price: item.price,
+          color: item.color,
+          size: item.size,
+          image: item.image,
+          title: item.title,
+          category: item.category,
+          company: item.company,
+          stock: item.stock,
+          rating: item.rating,
+          description: item.description,
+        });
+        return p.save();
+      });
+      const result = await Promise.all(productPromises);
+      return NextResponse.json({ result });
+    } else {
+      return NextResponse.json({ error: "Invalid request method" });
+    };
+  } catch (error) {
+    console.error("Error in API handler:", error);
+    return NextResponse.json({ error: "Internal Server Error", error });
+  };
+};
+
+// export async function PATCH(req, res) {
+//   await db();
+//   try {
+//     const payload = await req.json();
+//     if (req.method === "PATCH") {
+//       payload.map(async (item) => {
+//         await Product.findByIdAndUpdate(item._id, item);
+//       });
+//       return NextResponse.json({ success: "true" });
+//     } else {
+//       return NextResponse.json({ error: "Invalid request method" });
+//     };
+//   } catch (error) {
+//     console.error("Error in API handler:", error);
+//     return NextResponse.json({ error: "Internal Server Error", message: error });
+//   };
+// };
