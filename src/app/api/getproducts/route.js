@@ -1,7 +1,8 @@
 import Product from "@/app/api/models/product_model";
-import db from "../db/mongoose"
+import db from "../db/mongoose";
 import { NextResponse } from "next/server";
 
+// Get the product list from the Database:
 export async function GET(req, res) {
   await db();
   try {
@@ -17,6 +18,7 @@ export async function GET(req, res) {
   };
 };
 
+// Add the products to the database in a bulk request:
 export async function POST(req, res) {
   await db();
   try {
@@ -50,6 +52,7 @@ export async function POST(req, res) {
   };
 };
 
+// Update products in a bulk request:
 // export async function PATCH(req, res) {
 //   await db();
 //   try {

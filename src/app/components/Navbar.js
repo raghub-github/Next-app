@@ -1,6 +1,6 @@
 "use client"
-import React, { useRef, useState, useEffect } from 'react'
-import Link from 'next/link'
+import React, { useRef, useState, useEffect } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { IoIosCloseCircle } from "react-icons/io";
 import { FaPlus, FaMinus, FaShoppingCart } from "react-icons/fa";
@@ -10,41 +10,45 @@ import { useDispatch, useSelector } from 'react-redux';
 import { MdDelete } from "react-icons/md";
 import { clearCart, removeFormCart, increment, decrement } from '../redux/slice';
 
+// import { userData } from '../redux/userSlice';
+
 const Navbar = () => {
-    const userCart = useSelector((data) => data.reducer);
-    const subTotal = useSelector((data) => data.reducer.subTotal);
+    const userCart = useSelector((data) => data.cart.carts);
+    const subTotal = useSelector((data) => data.cart.subTotal);
+    // const products = useSelector((data) => data.products.products);
+    // const user = useSelector((data) => data.userData.user);
     const dispatch = useDispatch();
     const [isClient, setIsClient] = useState(false);
     const [itemCount, setItemCount] = useState(0);
 
     useEffect(() => {
         setIsClient(true);
-        setItemCount(userCart.carts.reduce((total, item) => total + item.qty, 0));
-    }, [userCart.carts]);
+        setItemCount(userCart.reduce((total, item) => total + item.qty, 0));
+    }, [userCart]);
 
     const toggleCart = () => {
         if (ref.current.classList.contains("translate-x-full") || ref.current.classList.contains("hidden")) {
-            ref.current.classList.remove("translate-x-full")
-            ref.current.classList.remove("hidden")
-            ref.current.classList.add("translate-x-0")
+            ref.current.classList.remove("translate-x-full");
+            ref.current.classList.remove("hidden");
+            ref.current.classList.add("translate-x-0");
         } else if (!ref.current.classList.contains("translate-x-full") || !ref.current.classList.contains("hidden")) {
-            ref.current.classList.remove("translate-x-0")
-            ref.current.classList.add("translate-x-full")
-            ref.current.classList.add("hidden")
-        }
-    }
+            ref.current.classList.remove("translate-x-0");
+            ref.current.classList.add("translate-x-full");
+            ref.current.classList.add("hidden");
+        };
+    };
 
     const ref = useRef();
 
     const renderCartContent = () => {
-        if (userCart.carts.length === 0) {
+        if (userCart.length === 0) {
             return <div className='flex mt-7 items-center justify-center'>No item in the cart</div>;
-        }
+        };
 
         return (
             <>
                 <ul className='list-decimal font-semibold'>
-                    {userCart.carts.map((k) => (
+                    {userCart.map((k) => (
                         <li key={k.id}>
                             <div className="item flex my-4">
                                 <div className='w-2/3 font-semibold mx-3'>{k.name}</div>
@@ -108,6 +112,6 @@ const Navbar = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Navbar;

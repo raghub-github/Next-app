@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 
 const slug = () => {
   const dispatch = useDispatch();
-  const [pin, setPin] = useState()
+  const [pin, setPin] = useState();
   const [service, setService] = useState();
 
   const handleAddToCart = () => {
@@ -24,7 +24,6 @@ const slug = () => {
   const checkServiceability = async () => {
     let pins = await fetch("http://localhost:3000/api/pincode");
     let pinJson = await pins.json();
-    console.log(pinJson, pins, pin);
     if (pinJson.includes(parseInt(pin))) {
       setService(true);
     }

@@ -1,6 +1,6 @@
 const { createSlice } = require("@reduxjs/toolkit");
 
-const isServer = typeof window === 'undefined'
+const isServer = typeof window === 'undefined';
 
 const loadCartFromLocalStorage = () => {
     try {
@@ -9,19 +9,23 @@ const loadCartFromLocalStorage = () => {
     } catch (error) {
         console.error('Error loading cart from local storage:', error);
         return [];
-    }
+    };
 };
 
 const calculateSubtotal = (cart) => {
+    if (cart.length === 0) {
+        return 0;
+    };
     return cart.reduce((total, item) => total + item.qty * item.price, 0);
 };
+
 
 const saveCartToLocalStorage = (cart) => {
     try {
         !isServer && localStorage.setItem('cart', JSON.stringify(cart));
     } catch (error) {
         console.error('Error saving cart to local storage:', error);
-    }
+    };
 };
 
 const initialState = {
@@ -29,7 +33,7 @@ const initialState = {
     subTotal: calculateSubtotal(loadCartFromLocalStorage()),
 };
 
-const Slice = createSlice({
+const CartSlice = createSlice({
     name: "addToCartSlice",
     initialState,
     reducers: {
@@ -58,7 +62,7 @@ const Slice = createSlice({
                 }
                 saveCartToLocalStorage(state.carts);
                 state.subTotal = calculateSubtotal(state.carts);
-            }
+            };
         },
         clearCart: (state) => {
             state.carts = [];
@@ -72,7 +76,7 @@ const Slice = createSlice({
                 existingItem.qty += 1;
                 saveCartToLocalStorage(state.carts);
                 state.subTotal = calculateSubtotal(state.carts);
-            }
+            };
         },
         decrement: (state, action) => {
             const id = action.payload;
@@ -84,7 +88,7 @@ const Slice = createSlice({
                 }
                 saveCartToLocalStorage(state.carts);
                 state.subTotal = calculateSubtotal(state.carts);
-            }
+            };
         },
     }
 });
@@ -95,5 +99,6 @@ export const {
     increment,
     decrement,
     clearCart,
-} = Slice.actions;
-export default Slice.reducer;
+} = CartSlice.actions;
+
+export default CartSlice.reducer;
