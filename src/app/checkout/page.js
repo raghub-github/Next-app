@@ -7,10 +7,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeFormCart, increment, decrement } from '../redux/slice';
 import { MdDelete } from "react-icons/md";
 
-
 const page = () => {
-  const userCart = useSelector((data) => data.reducer);
-  const subTotal = useSelector((data) => data.reducer.subTotal);
+  const userCart = useSelector((data) => data.cart.carts);
+  const subTotal = useSelector((data) => data.cart.subTotal);
   const dispatch = useDispatch();
   const [isClient, setIsClient] = useState(false);
   const ref = useRef();
@@ -20,14 +19,14 @@ const page = () => {
   }, []);
 
   const renderCartContent = () => {
-    if (userCart.carts.length === 0) {
+    if (userCart.length === 0) {
       return <div className='flex mt-7 items-center justify-center'>No item in the cart</div>;
     }
 
     return (
       <>
         <ul className='list-decimal m-auto justify-center font-semibold'>
-          {userCart.carts.map((k) => (
+          {userCart.map((k) => (
             <li key={k.id}>
               <div className="item items-center bg-green-50 rounded  flex my-5">
                 <div className='w-2/3 font-semibold mr-3'>{k.name}</div>

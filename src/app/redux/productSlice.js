@@ -1,20 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
+const isServer = typeof window === 'undefined';
 
-const initialState = {
-    products: [{ name: "iphone" }],
-    loading: false,
-    error: null,
+const fetchProducts = async () => {
+    try {
+        const response = await fetch(`http://localhost:3000/api/getproducts`);
+        const data = await response.json();
+        console.log("data1", data);
+        return data;
+    } catch (error) {
+        console.error('Error loading Products:', error);
+        return [];
+    };
 };
 
-export const fetchProducts = () => async (dispatch) => {
-    dispatch({ type: "products/fetchStarted" });
-    try {
-        const response = await fetch("http://localhost:3000/api/getproducts");
-        const data = await response.json();
-        dispatch({ type: "products/fetchSuccess", payload: data });
-    } catch (error) {
-        dispatch({ type: "products/fetchFailure", payload: error });
-    };
+const initialState = {
+    products: !isServer ? fetchProducts() : [],
+    loading: false,
+    error: null,
 };
 
 const productsSlice = createSlice({

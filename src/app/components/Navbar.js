@@ -10,13 +10,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { MdDelete } from "react-icons/md";
 import { clearCart, removeFormCart, increment, decrement } from '../redux/slice';
 
-// import { userData } from '../redux/userSlice';
-
 const Navbar = () => {
     const userCart = useSelector((data) => data.cart.carts);
     const subTotal = useSelector((data) => data.cart.subTotal);
-    // const products = useSelector((data) => data.products.products);
-    // const user = useSelector((data) => data.userData.user);
     const dispatch = useDispatch();
     const [isClient, setIsClient] = useState(false);
     const [itemCount, setItemCount] = useState(0);

@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const page = () => {
   const dispatch = useDispatch();
-  // dispatch(productsList({ name: "products" }));
+  const products = useSelector((data) => data.products.products);
+  console.log("products1", products);
+
   return (
     <div>
       <section className="text-gray-600 mr-5 ml-5 body-font">

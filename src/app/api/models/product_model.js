@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
   category: { type: String, required: true },
   company: { type: String, required: true },
   stock: { type: Number, required: true, min: 0 },
-  rating: { type: Number, required: true, min: 0, max: 5 }, 
+  rating: { type: Number, required: true, min: 0, max: 5 },
   description: { type: String, required: true },
 }, { timestamps: true });
 

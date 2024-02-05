@@ -19,7 +19,6 @@ const calculateSubtotal = (cart) => {
     return cart.reduce((total, item) => total + item.qty * item.price, 0);
 };
 
-
 const saveCartToLocalStorage = (cart) => {
     try {
         !isServer && localStorage.setItem('cart', JSON.stringify(cart));
