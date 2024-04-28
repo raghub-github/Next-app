@@ -1,13 +1,17 @@
 "use client"
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { fetchProducts } from '../redux/productSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const page = () => {
   const dispatch = useDispatch();
-  const products = useSelector((data) => data.products.products);
-  console.log("products1", products);
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [])
+  const products = useSelector((data) => data.products);
+  console.log("products list", products.products);
 
   return (
     <div>

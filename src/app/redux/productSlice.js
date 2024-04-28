@@ -1,20 +1,26 @@
-import { createSlice } from "@reduxjs/toolkit";
-const isServer = typeof window === 'undefined';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const fetchProducts = async () => {
+const fetchProducts1 = async () => {
     try {
-        const response = await fetch(`http://localhost:3000/api/getproducts`);
+        const response = await fetch('http://localhost:3000/api/getproducts');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
         const data = await response.json();
-        console.log("data1", data);
         return data;
     } catch (error) {
-        console.error('Error loading Products:', error);
-        return [];
-    };
+        console.error('Error fetching products:', error);
+        return null;
+    }
 };
 
+export const fetchProducts = createAsyncThunk("fetchProducts", async () => {
+    const response = await fetch('http://localhost:3000/api/getproducts');
+    return response.json();
+});
+
 const initialState = {
-    products: !isServer ? fetchProducts() : [],
+    products: [],
     loading: false,
     error: null,
 };
@@ -27,21 +33,21 @@ const productsSlice = createSlice({
             console.log("allProducts");
         },
     },
-    // extraReducers: (builder) => {
-    //     builder
-    //         .addCase(fetchProducts.pending, (state) => {
-    //             state.loading = true;
-    //             state.error = null;
-    //         })
-    //         .addCase(fetchProducts.fulfilled, (state, action) => {
-    //             state.products = action.payload;
-    //             state.loading = false;
-    //         })
-    //         .addCase(fetchProducts.rejected, (state, action) => {
-    //             state.loading = false;
-    //             state.error = action.error.message;
-    //         });
-    // },
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchProducts.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(fetchProducts.fulfilled, (state, action) => {
+                state.products = action.payload;
+                state.loading = false;
+            })
+            .addCase(fetchProducts.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message;
+            });
+    },
 });
 
 export const { allProducts } = productsSlice.actions;
